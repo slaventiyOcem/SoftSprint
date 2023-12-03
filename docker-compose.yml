@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+  mariadb:
+    image: 'mariadb:10'
+    environment:
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_DATABASE: '${DB_DATABASE}'
+      MYSQL_USER: '${DB_USERNAME}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
+    volumes:
+      - 'softsprint-mariadb:/var/lib/mysql'
+    networks:
+      - softsprint
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-p${DB_DATABASE}"]
+      retries: 3
+      timeout: 5s
+
+  php-fpm:
+    image: 'php:7.4-fpm'
+    networks:
+      - softsprint
+
+  nginx:
+    image: nginx
+    ports:
+      - '8082:80'
+    restart: always
+    depends_on:
+      - php-fpm
+
+networks:
+  softsprint:
+    driver: bridge
+
+volumes:
+  softsprint-mariadb:
+    driver: local
+
+
+
+
+        
+
+          
