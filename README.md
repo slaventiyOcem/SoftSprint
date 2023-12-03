@@ -51,16 +51,16 @@ Set the database parameters (DB_HOST = 127.0.0.1, DB_DATABASE = tz_SoftSprint, D
 ```bash
     php artisan key:generate
 ```
+**Run Docker Compose:**
 
+ ```bash
+    docker-compose up -d
+ ```
 **Perform migrations and populate the database:**
 
 ```bash
-    php artisan migrate --seed
+    docker-compose exec app php artisan migrate --seed
 ```
-**Start the web server:**
 
-```bash
-    php artisan serve
-```
 
  <h3>After completing these steps, your application will be available at http://localhost:8000.</h3>
