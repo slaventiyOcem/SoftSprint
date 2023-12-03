@@ -17,5 +17,11 @@
 
 <p>Database: the table with products should include the following fields: Name, price, description, photo (url), date of creation and editing.<p></p>
 
+## Installation
+
+<p>Before starting, make sure that PHP, Composer and MySQL are installed on your computer.</p>
+
+**Clone the repository:**
+
 
 
