@@ -26,3 +26,41 @@
 ```bash
  git clone https://github.com/slaventiyOcem/SoftSprint.git
 ```
+**Go to the project directory:**
+
+```bash
+    cd SoftSprint
+```
+**Install dependencies:**
+
+```bash
+    composer install
+```
+
+**Create a .env file:**
+
+```bash
+    cp .env.example .env
+```
+
+**Set up your .env file:**
+
+Set the database parameters (DB_HOST = 127.0.0.1, DB_DATABASE = tz_SoftSprint, DB_USERNAME = root, DB_PASSWORD = root && ' ').
+     - Set the application key:
+
+```bash
+    php artisan key:generate
+```
+
+**Perform migrations and populate the database:**
+
+```bash
+    php artisan migrate --seed
+```
+**Start the web server:**
+
+```bash
+    php artisan serve
+```
+
+ <h3>After completing these steps, your application will be available at http://localhost:8000.</h3>
