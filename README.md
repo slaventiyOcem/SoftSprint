@@ -23,5 +23,6 @@
 
 **Clone the repository:**
 
-
-
+```bash
+ git clone https://github.com/slaventiyOcem/SoftSprint.git
+```
